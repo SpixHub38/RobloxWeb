@@ -1,1 +1,67 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #6c5ce7;
+  --color-primary-dark: #5a4bd1;
+  --color-secondary: #00cec9;
+  --color-accent: #fd79a8;
+  --color-dark-bg: #0f0f1a;
+  --color-dark-card: #1a1a2e;
+  --color-dark-card-hover: #222240;
+  --color-dark-border: #2d2d4a;
+  --color-dark-input: #16162a;
+  --color-success: #00b894;
+  --color-danger: #e17055;
+}
+
+body {
+  background-color: #0f0f1a;
+  color: #e0e0e0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d2d4a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6c5ce7;
+}
+
+/* Code block styling */
+.code-block {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  tab-size: 2;
+}
+
+/* Glow effects */
+.glow-purple {
+  box-shadow: 0 0 20px rgba(108, 92, 231, 0.3);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(0, 206, 201, 0.3);
+}
+
+/* Animation for copy button */
+@keyframes copyPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.copy-pulse {
+  animation: copyPulse 0.3s ease-in-out;
+}
