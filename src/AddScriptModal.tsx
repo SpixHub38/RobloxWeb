@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Search, X, Code2, Gamepad2 } from 'lucide-react';
-import { GameScript, CATEGORIES, Category } from './types';
-import { v4 as uuidv4 } from 'uuid';
+import { Plus, X, Code2, Gamepad2 } from 'lucide-react';
+import { GameScript, CATEGORIES } from './types';
+
+function generateId(): string {
+  return Date.now().toString(36) + Math.random().toString(36).substr(2, 9);
+}
 
 interface AddScriptModalProps {
   isOpen: boolean;
@@ -34,7 +37,7 @@ export default function AddScriptModal({ isOpen, onClose, onAdd }: AddScriptModa
     if (!validate()) return;
 
     const newScript: GameScript = {
-      id: uuidv4(),
+      id: generateId(),
       placeId: placeId.trim(),
       gameName: gameName.trim(),
       script: script.trim(),
